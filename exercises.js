@@ -239,8 +239,12 @@ var multiplyAll = function(arr){
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
-
+var getKeys = function(obj){
+  var result = [];
+  for (var key in obj)
+    result.push(obj[key]);
+  return result
+}
 /* #sumAllPositive
  *
  * Takes in an array of numbers and returns the sum of all non-negative numbers.
@@ -478,7 +482,7 @@ module.exports = {
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
   multiplyAll: multiplyAll,
-  getKeys: null,
+  getKeys: getKeys,
   sumAllPositive: null,
   stringCountBelowThree: null,
   countObjects: null,
