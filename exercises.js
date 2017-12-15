@@ -22,7 +22,13 @@ var doubleArray = function(arr) {
  * @return {Bool}
  */
 var sumArrays = function(arr1, arr2){
-  var sum1 = arr1.reduce((total, amount) => total + amount);
+  var result = 0;
+  for (var i = 0; i<arr1.length; i++){
+    result += arr1[i] + arr2[i]
+  }
+  return result
+}
+  /*var sum1 = arr1.reduce((total, amount) => total + amount);
   var sum2 = arr2.reduce((total, amount) => total + amount);
   var result = sum1 + sum2;
 
@@ -48,7 +54,10 @@ var stringCount = function(str){
  * @param {String}
  * @return {Number}
  */
-var arrayLength;
+var arrayLength = function(arr){
+  var result = arr.length;
+  return result
+}
 
 /* #countAll
  *
@@ -391,7 +400,7 @@ module.exports = {
   doubleArray: doubleArray,
   sumArrays: sumArrays,
   stringCount: stringCount,
-  arrayLength: null,
+  arrayLength: arrayLength,
   countAll: null,
   countStrings: null,
   countAllStrings: null,
