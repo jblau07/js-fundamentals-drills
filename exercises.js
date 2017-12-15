@@ -286,7 +286,15 @@ var stringCountBelowThree = function(arr){
  * @param {Array}
  * @return {Number}
  */
-var countObjects;
+var countObjects = function(arr){
+  var result = 0;
+  for (var i = 0; i<arr.length; i++){
+    if (typeof arr[i] === "object"){
+      result ++
+    }
+  }
+  return result
+}
 
 /* #getObjectKeys
  *
@@ -501,7 +509,7 @@ module.exports = {
   getKeys: getKeys,
   sumAllPositive: sumAllPositive,
   stringCountBelowThree: stringCountBelowThree,
-  countObjects: null,
+  countObjects: countObjects,
   getObjectKeys: null,
   getObjectValues: null,
   makeObject: null,
