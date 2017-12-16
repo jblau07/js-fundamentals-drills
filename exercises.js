@@ -463,7 +463,21 @@ var arraysToObject = function(arr1, arr2){
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples;
+var objectsToTuples = function(obj1, obj2){
+  var result = [];
+  for (var key in obj1){
+    var tuple1 = [];
+    tuple1.push(key, obj1[key])
+    result.push(tuple1)
+  }
+
+  for (var key in obj2){
+    var tuple2 = [];
+    tuple2.push(key, obj2[key])
+    result.push(tuple2)
+  }
+  return result
+}
 
 /* #mapArrayValues
  *
@@ -567,7 +581,7 @@ module.exports = {
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
   arraysToObject: arraysToObject,
-  objectsToTuples: null,
+  objectsToTuples: objectsToTuples,
   mapArrayValues: null,
   mapStringCounts: null,
   arrayToObjectNums: null,
