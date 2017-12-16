@@ -589,7 +589,14 @@ return result
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = function(arr){
+  var result = {};
+  for (var i = 0; i < arr.length; i++){
+    result[arr[i][0]] = arr[i][1];
+  }
+
+  return result
+}
 
 
 module.exports = {
@@ -632,5 +639,5 @@ module.exports = {
   stringToKeys: stringToKeys,
   charCountMap: charCountMap,
   frequencyMap: frequencyMap,
-  tupleConvertToObject: null
+  tupleConvertToObject: tupleConvertToObject
 }
